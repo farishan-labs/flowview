@@ -3,7 +3,7 @@
 Native Mermaid/flow viewer: renders Mermaid fenced blocks (or raw `.mmd`) to HTML
 via Pele (pele.run) and displays in vocus.
 
-## Install (end users)
+## Install
 
 ```bash
 curl -fsSL https://farishan-labs.github.io/flowview/install.sh | bash
@@ -40,10 +40,6 @@ Keyboard: `Esc` closes. Fullscreen, borderless. Pele renders client-side via CDN
 ```bash
 pip install -e .
 ```
-
-### Used by
-
-- /openflow slash command (agent repo) — invokes flowview on a flow name.
 
 ## License
 
