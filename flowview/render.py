@@ -64,10 +64,22 @@ def build_html(source: str, title: str, is_raw_mmd: bool = False) -> str:
 <meta charset="utf-8">
 <title>{_html.escape(title)}</title>
 <style>
+  :root {{
+    --pele-bg: #fff; --pele-fg: #1f1f1f; --pele-line: #1f1f1f;
+    --pele-muted: #6e6e6e; --pele-surface: #f3f3f3;
+    --pele-surface-alt: #e6e6e6; --pele-border: #8a8a8a;
+  }}
   body {{ font-family: system-ui, sans-serif; margin: 2rem; background: #fafafa; color: #222; }}
-  @media (prefers-color-scheme: dark) {{ body {{ background: #1e1e2e; color: #e0e0e0; }} }}
-  .mermaid {{ background: #fff; padding: 1rem; border-radius: 8px; }}
-  @media (prefers-color-scheme: dark) {{ .mermaid {{ background: #2a2a3e; }} }}
+  @media (prefers-color-scheme: dark) {{
+    :root {{
+      --pele-bg: #2a2a3e; --pele-fg: #e0e0e0; --pele-line: #e0e0e0;
+      --pele-muted: #a0a0a0; --pele-surface: #3a3a4e;
+      --pele-surface-alt: #2a2a3e; --pele-border: #5a5a6e;
+    }}
+    body {{ background: #1e1e2e; color: #e0e0e0; }}
+  }}
+  .mermaid {{ background: var(--pele-bg); padding: 1rem; border-radius: 8px; text-align: center; }}
+  .mermaid svg {{ margin: 0 auto; display: block; }}
   h1 {{ font-size: 1.2rem; opacity: .7; }}
 </style>
 </head>
